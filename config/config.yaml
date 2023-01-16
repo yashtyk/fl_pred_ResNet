@@ -1,0 +1,32 @@
+data:
+  name: sdo-benchmark
+  validation_size: 0.1
+  channel: 211
+  size: 256
+  targets:
+    classes:
+      - Quiet: "< 1e-6"
+      - ">=C": ">= 1e-6"
+  time_steps: [ 3 ]
+  path: /Users/yanashtyk/Downloads/SDOBenchmark-data-full
+
+
+model:
+  backbone: simple-cnn
+  learning_rate: 5e-3
+
+trainer:
+  epochs: 20
+  patience: 12
+  batch_size: 128
+
+name: Baseline binary classification model
+training_type: train  # train, finetune, ssl
+tune_lr: false
+path: models/baseline_binary_sdobenchmark
+seed: 42
+tracking: false
+
+system:
+  gpus: 0
+  workers: 20

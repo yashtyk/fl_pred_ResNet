@@ -1,0 +1,28 @@
+machine: 'gpu005.yggdrasil | Linux #1 SMP Mon Jul 29 17:46:05 UTC 2019 | 16 cores @ 3200.00Mhz | RAM 377 GB | 1x NVIDIA TITAN RTX'
+training_time: 1397.64s
+model_size: 44842kB
+early_stopping_epoch: 52
+model_checkpoint_step: 1749
+model_checkpoint_epoch: 33
+tracking_id:
+data:
+  class-balance:
+    train:
+      Quiet: 4019
+      '>=C': 2639
+    val:
+      Quiet: 447
+      '>=C': 292
+    test:
+      Quiet: 335
+      '>=C': 495
+  shape: (4, 256, 256)
+  tensor-data:
+    min: -1.0
+    max: 1.0
+    mean: -0.001078579924069345
+    std: 0.2973189949989319
+  set-sizes:
+    train: 6658
+    val: 739
+    test: 830

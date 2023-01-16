@@ -1,0 +1,24 @@
+# @package _global_
+
+data:
+  channel: 211
+  time_steps: [0, 1, 2, 3]
+  targets:
+    classes:
+      - Quiet: "< 1e-6"
+      - ">=C": ">= 1e-6"
+  path: /home/samsung/Documents/test-repro/data/sdo-benchmark
+
+
+model:
+  backbone: resnet18
+  activation: relu6
+  pooling: 2
+  dropout: 0.2
+  n_hidden: 16
+  learning_rate: 5e-3
+  lr_scheduler: true
+
+name: Baseline binary classification model, magnetogram, >=C
+tags: ["sdo-benchmark", "Class-C"]
+path: /home/samsung/Documents/test-repro/models/resnet18_211_best

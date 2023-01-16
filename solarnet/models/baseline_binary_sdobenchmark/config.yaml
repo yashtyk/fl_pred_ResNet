@@ -1,0 +1,36 @@
+data:
+  channel: 211
+  name: sdo-benchmark
+  path: /Users/yanashtyk/Downloads/SDOBenchmark-data-full
+  size: 256
+  targets:
+    classes:
+    - Quiet: < 1e-6
+    - '>=C': '>= 1e-6'
+  time_steps:
+  - 0
+  - 1
+  - 2
+  - 3
+  validation_size: 0.1
+model:
+  activation: relu6
+  backbone: resnet18
+  dropout: 0.2
+  learning_rate: 0.005
+  lr_scheduler: true
+  n_hidden: 16
+  pooling: 2
+name: Baseline binary classification model
+path: models/baseline_binary_sdobenchmark
+seed: 42
+system:
+  gpus: 0
+  workers: 4
+tracking: false
+trainer:
+  batch_size: 128
+  epochs: 20
+  patience: 12
+training_type: train
+tune_lr: false

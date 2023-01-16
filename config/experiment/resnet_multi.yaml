@@ -1,0 +1,77 @@
+data:
+  name: sdo-benchmark
+  validation_size: 0.1
+  channel: [magnetogram, 94, 193, 211, 335, 131, continuum, 1700, 304, 171]
+  size: 256
+  targets:
+    classes:
+      - Quiet: "< 1e-6"
+      - ">=C": ">= 1e-6"
+  time_steps: [0, 1, 2, 3 ]
+  path: /Users/yanashtyk/Downloads/SDOBenchmark-data-full
+type: multi
+is_train: false
+
+
+model:
+  backbone: resnet18
+  learning_rate: 0.005
+  activation: relu6
+  pooling: 2
+  dropout: 0.2
+  n_hidden: 16
+  lr_scheduler: true
+  type: maj
+
+trainer:
+  epochs: 20
+  patience: 12
+  batch_size: 128
+
+name: Baseline binary classification model
+training_type: train  # train, finetune, ssl
+tune_lr: false
+tracking: false
+
+path0: /Users/yanashtyk/Documents/models_resnet/magn_sgd_12_seed_
+path1: /Users/yanashtyk/Documents/models_resnet/94_sgd_74_seed_
+path2: /Users/yanashtyk/Documents/models_resnet/193_sgd_42_seed_
+path3: /Users/yanashtyk/Documents/models_resnet/211_sgd1_12_seed
+path4: /Users/yanashtyk/Documents/models_resnet/335_sgd_12_seed_
+path5: /Users/yanashtyk/Documents/models_resnet/131_sgd_42_seed_
+
+path6: /Users/yanashtyk/Documents/models_resnet/cont_sgd_12_seed_
+path7: /Users/yanashtyk/Documents/models_resnet/1700_sgd_12_seed_
+path8: /Users/yanashtyk/Documents/models_resnet/304_sgd_74_seed_
+
+path9: /Users/yanashtyk/Documents/models_resnet/171_sgd_12_seed_
+
+
+
+channel_path:
+  magnetogram: 0
+  94: 1
+  211: 3
+  continuum: 6
+  1700: 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+system:
+  gpus: 0
+  workers: 4

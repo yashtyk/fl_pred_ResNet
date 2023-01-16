@@ -1,0 +1,20 @@
+backbone: resnet18
+hparams:
+  activation: relu6
+  backbone: resnet18
+  backbone_output_size: 0
+  class_weight:
+  - 0.8320018796992481
+  - 1.2530077848549186
+  dropout: 0.2
+  learning_rate: 0.005
+  lr_scheduler: true
+  lr_scheduler_total_steps: 1120
+  lr_scheduler_warmup_steps: 100
+  n_channel: 4
+  n_class: 2
+  n_hidden: 16
+  pooling: 2
+model: ImageClassification
+n_channel: 4
+output_size: 2
